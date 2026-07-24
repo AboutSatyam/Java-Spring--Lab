@@ -29,6 +29,7 @@ public class Armstrong37 {
 		int CopyNum = num;
 
 		int digits = noOfDigit(num);
+		
 		int finalNumber = 0;
 
 		while (num > 0) {
