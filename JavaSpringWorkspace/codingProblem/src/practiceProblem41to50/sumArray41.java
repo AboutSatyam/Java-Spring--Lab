@@ -13,7 +13,7 @@ public class sumArray41 {
 	}
 
 	public static long sum(int[] numArray) {
-		
+
 		return 0;
 	}
 
