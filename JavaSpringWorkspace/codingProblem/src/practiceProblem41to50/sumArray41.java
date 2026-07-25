@@ -6,7 +6,7 @@ public class sumArray41 {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Array Sum and Avg Calculator");
-
+		System.out.println("h");
 		int[] numArray = ArrayUtility.inputArray();
 		long sum = sum(numArray);
 		int avg = avg(numArray);
