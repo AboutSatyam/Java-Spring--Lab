@@ -2,12 +2,12 @@ package practiceProblem41to50;
 
 import java.util.Scanner;
 
-public class ConcurrenArray42 {
+public class ConcurrenArray41 {
 
 	public static void main(String[] args) {
 
 		Scanner Scan = new Scanner(System.in);
-
+		System.out.println("Welcome To Concurren Finder");
 		int[] numArray = ArrayUtility.inputArray();
 		System.out.println("Enter The number You Want To Find : ");
 		int num = Scan.nextInt();

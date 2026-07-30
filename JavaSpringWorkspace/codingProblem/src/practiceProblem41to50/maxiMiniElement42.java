@@ -2,7 +2,7 @@ package practiceProblem41to50;
 
 import java.util.Scanner;
 
-public class maxiMiniElement43 {
+public class maxiMiniElement42 {
 
 	public static void main(String[] args) {
 

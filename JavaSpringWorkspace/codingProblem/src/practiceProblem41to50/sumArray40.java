@@ -3,7 +3,7 @@ package practiceProblem41to50;
 import java.lang.reflect.Array;
 import java.util.Scanner;
 
-public class sumArray41 {
+public class sumArray40 {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Array Sum and Avg Calculator");
