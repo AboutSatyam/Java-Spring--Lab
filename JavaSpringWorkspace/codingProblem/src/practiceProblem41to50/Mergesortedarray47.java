@@ -3,14 +3,14 @@ package practiceProblem41to50;
 public class Mergesortedarray47 {
 
 	public static void main(String[] args) {
-
-		System.out.println("Welcome To Merging Sorted Array \n");
-		int[] Arr1 = ArrayUtility.inputArray();
-		int[] Arr2 = ArrayUtility.inputArray();
-
-		int[] Mer = merge(Arr1, Arr2);
-
-		ArrayUtility.displayArray(Mer);
+	
+			System.out.println("Welcome To Merging Sorted Array \n");
+			int[] Arr1 = ArrayUtility.inputArray();
+			int[] Arr2 = ArrayUtility.inputArray();
+	
+			int[] Mer = merge(Arr1, Arr2);
+	
+			ArrayUtility.displayArray(Mer);
 	}
 
 	public static int[] merge(int[] arr1, int[] arr2) {
@@ -21,9 +21,7 @@ public class Mergesortedarray47 {
 
 		while (i < arr1.length || j < arr2.length) {
 
-			if (j == arr2.length ||
-					(i < arr1.length &&
-							arr1[i] < arr2[j])) {
+			if (j == arr2.length || (i < arr1.length &&  	arr1[i] < arr2[j])) {
 
 				newArr[k] = arr1[i];
 				i++;
