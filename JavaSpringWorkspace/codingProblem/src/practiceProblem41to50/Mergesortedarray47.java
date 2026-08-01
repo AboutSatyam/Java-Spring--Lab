@@ -21,7 +21,9 @@ public class Mergesortedarray47 {
 
 		while (i < arr1.length || j < arr2.length) {
 
-			if (j == arr2.length || (i < arr1.length && arr1[i] < arr2[j])) {
+			if (j == arr2.length ||
+					(i < arr1.length &&
+							arr1[i] < arr2[j])) {
 
 				newArr[k] = arr1[i];
 				i++;
