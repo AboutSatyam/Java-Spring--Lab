@@ -1,6 +1,6 @@
 package practiceProblem41to50;
 
-class DiagonalSum2DArray {
+class DiagonalSum2DArray50 {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Diagonal Sum");
 		int[][] numArr = ArrayUtility.input2DArray();
