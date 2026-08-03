@@ -1,6 +1,6 @@
 package practiceProblem71to80;
 
-//76. Create an object with final fields and a constructor to initialize them.
+//*76. Create an object with final fields and a constructor to initialize them.
 
 public class FinalKConstructor76 { // This IS Immutable Class because Value Is only Be Edited By Constructor Only
 									// .. --> Final Hai Baba .....
