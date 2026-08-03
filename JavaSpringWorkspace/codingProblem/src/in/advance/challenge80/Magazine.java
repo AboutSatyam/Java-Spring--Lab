@@ -1,5 +1,6 @@
 package in.advance.challenge80;
 
-public class Magazine {
+public class Magazine extends LibraryItem {
+	private String issueNo;
 
 }
