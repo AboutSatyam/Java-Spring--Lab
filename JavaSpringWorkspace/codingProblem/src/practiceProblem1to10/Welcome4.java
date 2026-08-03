@@ -2,7 +2,7 @@ package practiceProblem1to10;
 
 import java.util.Scanner;
 
-public class WElcome4 {
+public class Welcome4 {
 
 	public static void main(String[] args) {
 		System.out.println("Please Enter Your Name :");
