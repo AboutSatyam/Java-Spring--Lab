@@ -1,0 +1,6 @@
+
+	/**
+	 * 82. Create a class ArrayOperations with a static nested class Statistics.
+	 * Statistics could have methods like mean(), median(), which operate on an
+	 * array.
+	 **/
