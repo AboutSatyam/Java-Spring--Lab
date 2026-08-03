@@ -1,6 +1,7 @@
 package practiceProblem71to80;
 
 import java.util.Scanner;
+//72. Calculate the area and circumference of a circle for a given radius using Math.PI.
 
 public class AreaMath72 {
 
@@ -26,10 +27,10 @@ public class AreaMath72 {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Circle Props : Radius : " + radiusInMm
-		        + ", Circumference : " + getCircumferecs()
-		        + ", Area : " + getArea();	}// With the Help to To tring any oone call above method then we do no have
-		// delcared in main methpd individually only to string call on main
+		return "Circle Props : Radius : " + radiusInMm + ", Circumference : " + getCircumferecs() + ", Area : "
+				+ getArea();
+	}// With the Help to To tring any oone call above method then we do no have
+	// delcared in main methpd individually only to string call on main
 
 	public static void main(String[] args) {
 		Scanner Scan = new Scanner(System.in);
