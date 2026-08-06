@@ -1,0 +1,7 @@
+
+/**
+ * 87. Arithmetic Exception Handling: Write a program that asks the user to
+ * enter two integers and then divides the first by the second. The program
+ * should handle any arithmetic exceptions that may occur (like division by
+ * zero) and display an appropriate message.
+ **/
