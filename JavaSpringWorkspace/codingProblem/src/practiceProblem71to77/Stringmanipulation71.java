@@ -1,4 +1,4 @@
-package practiceProblem71to80;
+package practiceProblem71to77;
 
 //71. Concatenate and Convert: Take two strings, concatenate them, and convert the result to uppercase.		 
 

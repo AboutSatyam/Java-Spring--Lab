@@ -1,4 +1,4 @@
-package practiceProblem71to80;
+package practiceProblem71to77;
 
 //73. Simulate a dice roll using Math.random() and display the outcome (1 to 6).
 

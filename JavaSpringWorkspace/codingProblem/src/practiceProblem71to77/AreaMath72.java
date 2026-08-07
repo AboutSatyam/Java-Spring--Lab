@@ -1,4 +1,4 @@
-package practiceProblem71to80;
+package practiceProblem71to77;
 
 import java.util.Scanner;
 //72. Calculate the area and circumference of a circle for a given radius using Math.PI.

@@ -1,4 +1,4 @@
-package practiceProblem71to80;
+package practiceProblem71to77;
 
 //*76. Create an object with final fields and a constructor to initialize them.
 

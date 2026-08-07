@@ -1,0 +1,54 @@
+
+/**
+ * 51. Create a Book class for a library system. - Instance variables: title,
+ * author, isbn. - Static variable: totalBooks, a counter for the total number
+ * of book instances. - Instance methods: borrowBook(), returnBook(). - Static
+ * method: getTotalBooks(), to get the total number of books in the library.
+ **/
+
+/**
+ * 52. Design a Course class. - Instance variables: courseName,
+ * enrolledStudents. - Static variable: maxCapacity, the maximum number of
+ * students for any course. - Instance methods: enrollStudent(String
+ * studentName), unenrollStudent(String studentName). - Static method:
+ * setMaxCapacity(int capacity), to set the maximum capacity for courses.
+ **/
+ 
+
+/**
+ * 53. Create a program to find the minimum of two numbers.
+ **/
+
+/**
+ * 54. Create a program to find if the given number is even or odd.
+ **/
+
+/**
+ * 55. Create a program to calculate the absolute value of a given integer.
+ **/
+
+/**
+ * 56. Create a program to based on a student's score, categorize as "High",
+ * "Moderate", or "Low" using the ternary operator (e.g., High for scores > 80,
+ * Moderate for 50-80, Low for < 50).
+ **/
+
+/**
+ * 57. Create a program to print the month of the year based on a number (1-12)
+ * input by the user.
+ **/
+
+/**
+ * 58. Create a program to create a simple calculator that uses a switch
+ * statement to perform basic arithmetic operations like addition, subtraction,
+ * multiplication, and division.
+ **/
+
+/**
+ * 59. Create a program using do-while to find password checker until a valid
+ * password is entered.
+ **/
+
+/**
+ * 60. Create a program using do-while to implement a number guessing game.
+ **/

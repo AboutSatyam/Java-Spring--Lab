@@ -1,4 +1,4 @@
-package practiceProblem71to80;
+package practiceProblem71to77;
 
 //75. Take an array of words and concatenate them into a single string using StringBuilder.
 public class ArraytoString75 {
