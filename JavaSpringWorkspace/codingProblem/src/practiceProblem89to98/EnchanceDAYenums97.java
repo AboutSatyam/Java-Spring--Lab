@@ -3,13 +3,7 @@ package practiceProblem89to98;
 public class EnchanceDAYenums97 {
 
 	enum Day {
-		Monday(true),
-		Tuesday(true),
-		Wednesday(true),
-		Thursday(true),
-		Friday(true),
-		Saturday(false),
-		Sunday(false);
+		Monday(true), Tuesday(true), Wednesday(true), Thursday(true), Friday(true), Saturday(false), Sunday(false);
 
 		private final boolean isWeekday;
 
