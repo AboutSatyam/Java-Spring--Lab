@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Reverse92 {
+public class Reverse93 {
 
 	public static void main(String[] args) {
 		List<Integer> list = Arrays.asList(1, 2, 4, 55, 4, 97, 5, 45, 46, 4, 6, 8);
