@@ -1,6 +1,6 @@
 package collectionApi6;
 
-public class List {
+public class ListKG {
 
 	public static void main(String[] args) {
 
