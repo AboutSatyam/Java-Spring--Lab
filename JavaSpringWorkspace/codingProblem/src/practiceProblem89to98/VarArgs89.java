@@ -1,4 +1,4 @@
-package practiceProblem89to95;
+package practiceProblem89to98;
 
 public class VarArgs89 {
 

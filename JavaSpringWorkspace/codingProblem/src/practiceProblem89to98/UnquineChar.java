@@ -1,4 +1,4 @@
-package practiceProblem89to95;
+package practiceProblem89to98;
 
 import java.util.HashSet;
 import java.util.Scanner;
