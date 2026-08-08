@@ -19,7 +19,14 @@ public class CustomCamparator90 {
 
 	public static void sortInDecsending(List<String> str) {
 		Collections.sort(str);
-		Collections.sort(str);
+		Collections.sort(str, new Comparator<String>() {
+
+			@Override
+			public int compare(String s, String t1) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		});
 
 	}
 
