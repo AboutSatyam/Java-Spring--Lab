@@ -19,8 +19,8 @@ public class CustomCamparator90 {
 
 	public static void sortInDecsending(List<String> str) {
 		Collections.sort(str);
-		Collections.sort(str, new Comparator<T>() {
-		});
+		Collections.sort(str);
+
 	}
 
 }
