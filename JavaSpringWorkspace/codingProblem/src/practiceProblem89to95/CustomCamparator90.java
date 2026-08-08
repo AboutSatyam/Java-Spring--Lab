@@ -28,10 +28,10 @@ public class CustomCamparator90 {
 					return 0;
 
 				} else if (s.charAt(0) < t1.charAt(0)) {
-					return -1;
+					return 1;
 
 				} else {
-					return 1;
+					return -1;
 				}
 			}
 		});
