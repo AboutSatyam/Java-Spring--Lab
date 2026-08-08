@@ -32,4 +32,23 @@
 	 * 95. Write a program that takes a string and returns the number of unique
 	 * characters using a Set.
 	 **/
+	 /**
+	 * 96. Create an enum called Day that represents the days of the week. Write a
+	 * program that prints out all the days of the week from this enum.
+	 **/
+
+	/**
+	 * 97. Enhance the Day enum by adding an attribute that indicates whether it is
+	 * a weekday or weekend. Add a method in the enum that returns whether it's a
+	 * weekday or weekend, and write a program to print out each day along with its
+	 * type.
+	 **/
+
+	/**
+	 * 98. Create a Map where the keys are country names (as String) and the values
+	 * are their capitals (also String). Populate the map with at least five
+	 * countries and their capitals. Write a program that prompts the user to enter
+	 * a country name and then displays the corresponding capital, if it exists in
+	 * the map.
+	 **/
 			
