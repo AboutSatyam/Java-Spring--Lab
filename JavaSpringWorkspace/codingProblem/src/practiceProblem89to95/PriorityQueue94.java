@@ -1,24 +1,32 @@
 package practiceProblem89to95;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class PriorityQueue94 {
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static void main(String[] args) {
+
+		PriorityQueue<Student> queue = new PriorityQueue<>(new Comparator<Student>() {
+
+			@Override
+			public int compare(Student student, Student t1) {
+				return student.getGrade() - t1.getGrade();
+				// return 0;
+			}
+
+		});
+		queue.offer(new Student("Satyam", 'B'));
+		queue.offer(new Student("Roshan", 'A'));
+		queue.offer(new Student("Rohan", 'C'));
+		queue.offer(new Student("Rishi", 'F'));
+		queue.offer(new Student("SRanni", 'D'));
+		queue.offer(new Student("Sunny", 'A'));
+		
+		
+		System.out.println(queue);
+	}
+
 	private static class Student {
 		private final String name;
 		private final char grade;
@@ -37,10 +45,14 @@ public class PriorityQueue94 {
 			return grade;
 		}
 
-	}
+		@Override
+		public String toString() {
+		
+			return name +": " + grade;
+		}
 
-	public static void main(String[] args) {
-
+		
+		
 	}
 
 }
