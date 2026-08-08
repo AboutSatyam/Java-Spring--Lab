@@ -1,0 +1,34 @@
+/**
+	 * 89. Write a method concatenate Strings that takes variable arguments of
+	 * String type and concatenates them into a single string.
+	 **/
+
+	/**
+	 * 90. Write a program that sorts a list of String objects in descending order
+	 * using a custom Comparator.
+	 **/
+
+	/**
+	 * 91. Use the Collections class to count the frequency of a particular element
+	 * in an ArrayList.
+	 **/
+
+	/**
+	 * 92. Write a method that swaps two elements in an ArrayList, given their
+	 * indices.
+	 **/
+
+	/**
+	 * 93. Create a program that reverses the elements of a List and prints the
+	 * reversed list.
+	 **/
+
+	/**
+	 * 94. Create a PriorityQueue of a custom class Student with attributes name and
+	 * grade. Use a comparator to order by grade.
+	 **/
+
+	/**
+	 * 95. Write a program that takes a string and returns the number of unique
+	 * characters using a Set.
+	 **/
