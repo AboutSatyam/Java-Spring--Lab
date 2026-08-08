@@ -22,9 +22,18 @@ public class PriorityQueue94 {
 		queue.offer(new Student("Rishi", 'F'));
 		queue.offer(new Student("SRanni", 'D'));
 		queue.offer(new Student("Sunny", 'A'));
-		
-		
+
 		System.out.println(queue);
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+
+		System.out.println(queue.poll());
+
+		System.out.println(queue.poll());
+
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+
 	}
 
 	private static class Student {
@@ -47,12 +56,10 @@ public class PriorityQueue94 {
 
 		@Override
 		public String toString() {
-		
-			return name +": " + grade;
+
+			return name + ": " + grade;
 		}
 
-		
-		
 	}
 
 }
