@@ -11,11 +11,13 @@ public class QueueKG {
 
 		// System.out.println(queue.peek());
 		queue.add(2006);
+		queue.add(26);
+		queue.add(06);
+		queue.add(2);
+		queue.add(36);
+
 		System.out.println(queue.offer(16));
 		System.out.println(queue.peek());
-		System.out.println();
-
-		System.out.println();
 
 	}
 
