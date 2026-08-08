@@ -2,6 +2,7 @@ package practiceProblem89to95;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CustomCamparator90 {
@@ -18,6 +19,8 @@ public class CustomCamparator90 {
 
 	public static void sortInDecsending(List<String> str) {
 		Collections.sort(str);
+		Collections.sort(str, new Comparator<T>() {
+		});
 	}
 
 }
