@@ -1,0 +1,7 @@
+	/**
+	 * 105. Write a program that uses an executor service to execute multiple
+	 * Callable tasks. Each task should calculate and return the factorial of a
+	 * number provided to it. Use Future objects to receive the results of the
+	 * calculations. After all tasks are submitted, retrieve the results from the
+	 * futures, print them, and ensure the executor service is shut down correctly.
+	 **/
