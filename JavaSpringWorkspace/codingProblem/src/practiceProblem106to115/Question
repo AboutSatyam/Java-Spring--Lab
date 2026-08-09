@@ -1,0 +1,56 @@
+
+	/**
+	 * 106. Write a lambda expression that takes two integers and returns their
+	 * multiplication. Then, apply this lambda to a pair of numbers.
+	 **/
+
+	/**
+	 * 107. Convert an array of strings into a stream. Then, use the stream to print
+	 * each string to the console.
+	 **/
+
+	/**
+	 * 108. Given a list of strings, use stream operations to filter out strings
+	 * that have length of 10 or more and then concatenate the remaining strings.
+	 **/
+
+	/**
+	 * 109. Given a list of integers, use stream operations to filter odd numbers
+	 * and print them.
+	 **/
+
+	/**
+	 * 110. Create your own functional interface with a single abstract method that
+	 * accepts an integer and returns a boolean. Implement it using a lambda that
+	 * checks if the number is prime.
+	 **/
+
+	/**
+	 * 111. Write two versions of a program that calculates the factorial of a
+	 * number: one using structural (procedural) programming, and the other using
+	 * functional programming.
+	 **/
+
+	/**
+	 * 112. Write a function that accepts a string and returns an Optional<String>.
+	 * If the string is empty or null, return an empty Optional, otherwise, return
+	 * an Optional containing the uppercase version of the string.
+	 **/
+
+	/**
+	 * 113. Given an array of integers, create a stream, use the distinct operation
+	 * to remove duplicates, and collect the result into a new list.
+	 **/
+
+	/**
+	 * 114. Create a list of employees with name and salary fields. Write a
+	 * comparator that sorts the employees by salary. Then, use this comparator to
+	 * sort your list using the sort stream operation.
+	 **/
+
+	/**
+	 * 115. Create a list of strings representing numbers ("1", "2", ...). Convert
+	 * each string to an integer, then again calculating squares of each number
+	 * using the map operation and sum up the resulting integers.
+	 **/
+}
