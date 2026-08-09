@@ -1,3 +1,4 @@
+
 package in.advance.challenge104;
 
 import java.util.concurrent.ExecutorService;
@@ -5,22 +6,34 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class multipleThreadExecutor {
-	{
-		try (ExecutorService service = Executors.newFixedThreadPool(3)) {
 
-			for (int i = 0; i < 10; i++) {
-				SleepTask task = new SleepTask();
-				service.submit(task);
+    public static void main(String[] args) {
 
-			}
-			if (!service.awaitTermination(10, TimeUnit.SECONDS)) {
-				System.out.println("EMERENCY OFF!!");
-				service.shutdownNow();
+        try (ExecutorService service = Executors.newFixedThreadPool(3)) {
 
-			}
+            // Submit 10 tasks
+            for (int i = 0; i < 10; i++) {
+                service.submit(new SleepTask());
+            }
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+            // Stop accepting new tasks
+            service.shutdown();
+
+            // Wait for tasks to finish
+            if (!service.awaitTermination(10, TimeUnit.SECONDS)) {
+
+                System.out.println("EMERGENCY OFF!!");
+
+                // Forcefully interrupt running tasks
+                service.shutdownNow();
+            }
+
+        } catch (InterruptedException e) {
+
+            System.out.println("Main thread interrupted.");
+
+            Thread.currentThread().interrupt();
+        }
+    }
 }
+
