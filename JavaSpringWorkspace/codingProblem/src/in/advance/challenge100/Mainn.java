@@ -6,7 +6,7 @@ public class Mainn {
 
 		ThreadState t1 = new ThreadState();
 
-		System.out.printf("\nNew Thread %s", t1.getState());
+		System.out.printf("\n Create a New Thread %s", t1.getState());
 
 		t1.start();
 		t1.join();
