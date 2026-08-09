@@ -1,7 +1,7 @@
 package in.advance.challenge102;
 
 public enum TrafficColor {
-	RED(9000), YELLOW(1000), GREEN(3000);
+	RED(12000), YELLOW(3000), GREEN(6000);
 
 	private final int onTimeInMin;
 
