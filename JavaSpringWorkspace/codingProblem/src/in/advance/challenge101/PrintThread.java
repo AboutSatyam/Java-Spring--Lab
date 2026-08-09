@@ -16,6 +16,13 @@ public class PrintThread extends Thread {
 
 		System.out.printf("%s Thread Starting %d \n", currentThread().getName(), threadNo);
 
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+		}
+
+		System.out.printf("%s Thread Ended %d \n", currentThread().getName(), threadNo);
+
 	}
 
 }
