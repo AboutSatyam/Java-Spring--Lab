@@ -1,7 +1,6 @@
-
-	/**
-	 * 100. Write a program that starts a thread and prints its state after each
-	 * significant event (creation, starting, and termination). Use Thread.sleep()
-	 * to simulate long-running tasks and Thread.getState() to print the thread's
-	 * state.
+/**
+	 * 101. Create three threads. Ensure that the second thread starts only after
+	 * the first thread ends and the third thread starts only after the second
+	 * thread ends using the join method. Each thread should print its start and end
+	 * along with its name.
 	 **/
