@@ -1,0 +1,7 @@
+
+	/**
+	 * 100. Write a program that starts a thread and prints its state after each
+	 * significant event (creation, starting, and termination). Use Thread.sleep()
+	 * to simulate long-running tasks and Thread.getState() to print the thread's
+	 * state.
+	 **/
