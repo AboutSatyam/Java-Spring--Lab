@@ -10,12 +10,12 @@ public class Empolyee {
 		this.salary = salary;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public int getSalary() {
+//		return salary;
+//	}
 
 }
