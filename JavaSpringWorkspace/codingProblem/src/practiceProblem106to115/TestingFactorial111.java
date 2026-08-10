@@ -2,7 +2,7 @@ package practiceProblem106to115;
 
 import java.util.stream.IntStream;
 
-public class TestingFactorial {
+public class TestingFactorial111 {
 	public static void main(String[] args) {
 		System.out.println("Factorial using two ways");
 		int number = 9;
