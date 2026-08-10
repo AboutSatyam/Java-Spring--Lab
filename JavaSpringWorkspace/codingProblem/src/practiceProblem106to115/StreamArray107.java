@@ -2,7 +2,7 @@ package practiceProblem106to115;
 
 import java.util.List;
 
-public class StreamArray {
+public class StreamArray107 {
 
 	public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package practiceProblem106to115;
 
 import java.util.function.BinaryOperator;
 
-public class LamdaMultiple {
+public class LamdaMultiple106 {
 
 	public static void main(String[] args) {
 
