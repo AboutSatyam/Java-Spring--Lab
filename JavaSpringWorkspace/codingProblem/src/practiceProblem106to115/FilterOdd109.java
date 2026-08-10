@@ -2,7 +2,7 @@ package practiceProblem106to115;
 
 import java.util.List;
 
-public class FilterOdd {
+public class FilterOdd109 {
 
 	public static void main(String[] args)
 
