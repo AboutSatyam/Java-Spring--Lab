@@ -10,12 +10,23 @@ public class Empolyee {
 		this.salary = salary;
 	}
 
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public int getSalary() {
-//		return salary;
-//	}
+	public String getName() {
+		return name;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Empolyee [name=");
+		builder.append(name);
+		builder.append(", salary=");
+		builder.append(salary);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }
