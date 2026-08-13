@@ -11,9 +11,7 @@ class Product8 {
 		System.out.println("Enter The 1 Number : ");
 		float a = Scan.nextFloat();
 
-		// Harivanshi 
-
-System.out.println("Enter The 2 Number : ");
+		System.out.println("Enter The 2 Number : ");
 		float b = Scan.nextFloat();
 
 		float c = a * b;
