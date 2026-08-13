@@ -3636,7 +3636,7 @@ public class NavinSirFace {
 
 		System.out.println(
 				"                                                                                                                                                      Thanks To "
-						+ "Navin & Hyder Sir          ");
+						+ "Navin & Hyder Sir           ");
 
 	}
 
