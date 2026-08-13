@@ -4,10 +4,12 @@
  multiplication, and division based on user input.
  */
 
+
 /**
  * 2. Create a class named "Car" with attributes like make, model, and year.
   Implement methods to set and display these attributes for different car objects.
  */
+
 
 /**
  * 3. Create a Java program to calculate the simple interest. 
@@ -15,15 +17,18 @@
 Calculate and display the simple interest.
  */
 
+
 /**
  * 4. Construct a Java program that checks if a given string is a  palindrome 
  (reads the same forwards and backwards).Prompt the 
   user to input a string and display whether it's a palindrome or not.
  */
+ 
 
 /**
  * 5. Create a simple Java game where the computer generates a random number, and the user has to guess it within a certain number of attempts. Provide hints like "higher" or "lower" for incorrect guesses.
  */
+ 
 
 /**
  * 6. Build a Java application to handle library operations. Include functions like adding books, checking out books, returning books, and displaying available books.

@@ -20,8 +20,8 @@ public class Reverse35 {
 
 		while (num > 0) {
 			int digit = (num % 10);
-		//	S *=10 + digit; // correct but  working like where to you bracket
-			S =S *10 + digit;
+			// S *=10 + digit; // correct but working like where to you bracket
+			S = S * 10 + digit;
 			num /= 10;
 
 		}
