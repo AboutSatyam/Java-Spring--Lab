@@ -2055,21 +2055,18 @@ public class NavinSirFace {
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // m17
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // m18
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // m19
 									if (i == (n - 1) && j > (n - 1) / 2 || i == (n - 1) / 2 && j > (n - 1) / 2) {
@@ -2082,7 +2079,6 @@ public class NavinSirFace {
 
 									}
 
-								System.out.println("");
 							}
 
 							for (int i = 0; i < n; i++) {
@@ -2092,49 +2088,42 @@ public class NavinSirFace {
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n2
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n3
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n4
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n5
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n6
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n7
 
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n8
 									if (i == (n - 1) / 2 && j > (n - 1) / 2 || i == (n - 1) && j > (n - 1) / 2)
@@ -2154,7 +2143,6 @@ public class NavinSirFace {
 								{
 									System.out.print(" ");
 								}
-								// System.out.print(" ");
 
 								for (int j = 0; j < n; j++) // n10
 
