@@ -16,7 +16,7 @@ public class Palindrome {
 		int i = 0;
 		String reverse = "";
 
-		while (str.length() >= i) {
+		while (str.length() > i) {
 
 			reverse = str.charAt(i) + reverse;
 
