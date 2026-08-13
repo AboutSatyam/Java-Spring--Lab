@@ -21,17 +21,32 @@ public class Calculator {
 
 		num2 = Scan.nextDouble();
 
-		int res = 0;
+		System.out.println("1. Addition");
+		System.out.println("2. Subtraction");
+		System.out.println("3. Multiplication");
+		System.out.println("4. Division");
+
+		System.out.println("");
+		int res = Scan.nextInt();
+
 		switch (res) {
 		case 1:
-			System.out.println("Addition is : " + num1 + num2);
+			System.out.println("Addition is : " + (num1 + num2));
+			break;
 		case 2:
 			System.out.println("Substraction is : " + (num1 - num2));
-		case 3:
-			System.out.println("Addition is : " + (num1 * num2));
-		case 4:
-			System.out.println("Addition is : " + (num1 / num2));
+			break;
 
+		case 3:
+			System.out.println("Multiplication is : " + (num1 * num2));
+			break;
+
+		case 4:
+			System.out.println("Division is : " + (num1 / num2));
+			break;
+
+		default:
+			System.out.println("InVaild Choice ");
 		}
 
 	}
