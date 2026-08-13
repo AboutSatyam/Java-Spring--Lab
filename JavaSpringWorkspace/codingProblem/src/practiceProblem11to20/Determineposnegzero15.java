@@ -8,7 +8,7 @@ public class Determineposnegzero15 {
 
 		Scanner Scan = new Scanner(System.in);
 
-		System.out.println("Welcome To ArematicOperator ");
+		System.out.println("Welcome To ArthematicOperator ");
 		System.out.println(" Enter The Number : ");
 
 		double V = Scan.nextDouble();

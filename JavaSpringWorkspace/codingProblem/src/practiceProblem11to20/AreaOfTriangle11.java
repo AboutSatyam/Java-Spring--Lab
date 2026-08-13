@@ -17,7 +17,7 @@ public class AreaOfTriangle11 {
 		double Base = Scan.nextDouble();
 
 		double Area = 0.5 * Height * Base;
-		
+
 		System.out.println(" The Area Of Triangle is :" + Area);
 
 	}
