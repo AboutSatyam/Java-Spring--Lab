@@ -1,4 +1,4 @@
-package assignmentByTelusko.Program1;
+package assignment.ByTelusko.Program1;
 
 public class Calculator {
 
