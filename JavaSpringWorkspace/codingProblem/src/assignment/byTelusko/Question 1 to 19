@@ -29,28 +29,40 @@ Calculate and display the simple interest.
 /**
  * 5. Create a simple Java game where the computer generates a random number,
   and the user has to guess it within a certain number of attempts.
-   Provide hints like "higher" or "lower" for incorrect guesses.
+  Provide hints like "higher" or "lower" for incorrect guesses.
  */
  
 
 /**
- * 6. Build a Java application to handle library operations. Include functions like adding books, checking out books, returning books, and displaying available books.
+ * 6. Build a Java application to handle library operations. 
+ Include functions like adding books, checking out books, 
+ returning books, and displaying available books.
+ */
+ 
+
+/**
+ * 7. Create a class "Product" with attributes like name, price, and
+  quantity. Implement multiple constructors to initialize objects with 
+  different sets of parameters.
  */
 
 /**
- * 7. Create a class "Product" with attributes like name, price, and quantity. Implement multiple constructors to initialize objects with different sets of parameters.
+ * 8. Construct a class representing a "Person" with private attributes like 
+ name, age, and ID. Implement public methods to access and modify 
+ these attributes in a controlled manner.
  */
 
 /**
- * 8. Construct a class representing a "Person" with private attributes like name, age, and ID. Implement public methods to access and modify these attributes in a controlled manner.
+ * 9. Develop a Java program that calculates the payroll for employees
+  based on hours worked and hourly rates. Incorporate different pay rates 
+  for regular hours and overtime.
  */
 
 /**
- * 9. Develop a Java program that calculates the payroll for employees based on hours worked and hourly rates. Incorporate different pay rates for regular hours and overtime.
- */
-
-/**
- * 10. Construct a superclass called "Shape" with methods to calculate the area and perimeter. Create subclasses such as "Rectangle" and "Circle" that inherit from the Shape class and implement their specific area and perimeter calculations.
+ * 10. Construct a superclass called "Shape" with methods to 
+ calculate the area and perimeter. Create subclasses such as "Rectangle"
+  and "Circle" that inherit from the Shape class and implement their specific
+   area and perimeter calculations.
  */
 
 /**
