@@ -10,9 +10,6 @@ public class GuesserGame {
 		int Attempt = 5;
 		int i = 1;
 
-//		int Guessed = random();
-//		System.out.println(Guessed);
-
 		Scanner input = new Scanner(System.in);
 		int Guessed = random();
 		while (i <= Attempt) {
@@ -20,7 +17,6 @@ public class GuesserGame {
 			System.out.println("Guess The No : ");
 			int uGuess = input.nextInt();
 
-			// int Guessed = random();
 			if (uGuess == Guessed) {
 				System.out.println("You Guess Correctly !!");
 				break;
