@@ -14,7 +14,6 @@ public class GuesserGame {
 		Scanner input = new Scanner(System.in);
 		int Guessed = random();
 		while (i <= Attempt) {
-			System.out.println(Guessed);
 			System.out.println("Guess The No : \n");
 			int uGuess = input.nextInt();
 
