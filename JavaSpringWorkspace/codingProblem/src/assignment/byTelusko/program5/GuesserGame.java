@@ -30,7 +30,7 @@ public class GuesserGame {
 
 			i++;
 		}
-		if (won != true) {
+		if (!won) {
 			System.out.println("Game Over!!! You used all attempts");
 			System.out.println("Guessed Number Was !!  " + Guessed);
 		}
