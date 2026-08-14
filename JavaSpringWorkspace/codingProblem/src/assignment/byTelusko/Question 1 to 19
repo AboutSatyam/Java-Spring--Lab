@@ -27,7 +27,9 @@ Calculate and display the simple interest.
  
 
 /**
- * 5. Create a simple Java game where the computer generates a random number, and the user has to guess it within a certain number of attempts. Provide hints like "higher" or "lower" for incorrect guesses.
+ * 5. Create a simple Java game where the computer generates a random number,
+  and the user has to guess it within a certain number of attempts.
+   Provide hints like "higher" or "lower" for incorrect guesses.
  */
  
 
