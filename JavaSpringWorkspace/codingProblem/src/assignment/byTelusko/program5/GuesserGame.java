@@ -8,20 +8,22 @@ public class GuesserGame {
 
 		System.out.println("Welcome TO Guesser Game ");
 		int Attempt = 5;
-		int i = 0;
+		int i = 1;
 
 //		int Guessed = random();
 //		System.out.println(Guessed);
 
 		Scanner input = new Scanner(System.in);
-
+		int Guessed = random();
 		while (i <= Attempt) {
+			// System.out.println(Guessed);
 			System.out.println("Guess The No : ");
 			int uGuess = input.nextInt();
 
-			int Guessed = random();
+			// int Guessed = random();
 			if (uGuess == Guessed) {
 				System.out.println("You Guess Correctly !!");
+				break;
 			} else if (uGuess > Guessed) {
 				System.out.println("Guess Lowerr");
 			} else if (uGuess < Guessed) {
@@ -31,9 +33,7 @@ public class GuesserGame {
 
 			i++;
 		}
-
-//		System.out.println("Guess The No : ");
-//		int uGuess = input.nextInt();
+		System.out.println("Game Over!!! You used all attempts");
 
 	}
 
