@@ -17,21 +17,23 @@ public class SavingsAccount extends BankAccount {
 
 	@Override
 	void withdrawal() {
+
 		System.out.println("Enter The Withdrawal Amount : ");
 		double Withdrawal = input.nextDouble();
-		balance -= Withdrawal;
-		System.out.println("Withdrawal Sucessful : " + Withdrawal);
+		if (balance - Withdrawal >= 1000) {
 
+			balance -= Withdrawal;
+			System.out.println("Withdrawal Sucessful : " + Withdrawal);
+		} else {
+			System.out.println("Minimum Balance Hit !!");
+			System.out.println("Minimum Balance Required: 1000");
+		}
 	}
 
 	@Override
 	void displayBalance() {
 
 		System.out.println("Your Current Balance Is : " + balance);
-
-	}
-
-	public static void main(String[] args) {
 
 	}
 

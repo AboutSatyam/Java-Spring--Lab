@@ -1,25 +1,29 @@
 package assignment.byTelusko.program11;
 
-import java.util.Scanner;
-
 public class CheckingAccount extends BankAccount {
+	public static void main(String[] args) {
+
+		SavingsAccount sav = new SavingsAccount();
+		sav.deposit();
+		sav.withdrawal();
+		sav.displayBalance();
+	}
 
 	@Override
 	void deposit() {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	void withdrawal() {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	void displayBalance() {
-
-	}
-
-	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 	}
 }
