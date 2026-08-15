@@ -1,6 +1,7 @@
 package assignment.byTelusko.program11;
 
 public class SavingsAccount extends BankAccount {
+	double balance = 10000;
 
 	@Override
 	void deposit() {
