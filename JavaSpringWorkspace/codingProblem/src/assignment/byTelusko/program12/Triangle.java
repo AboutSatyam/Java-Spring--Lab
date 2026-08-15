@@ -39,15 +39,16 @@ public class Triangle implements Shape {
 
 		rec.Area();
 
-		System.out.println("Enter The Length Of Triangle : ");
+		System.out.println("Enter The Side 1 Of Triangle : ");
 		rec.s1 = input.nextDouble();
 
-		System.out.println("Enter The Length Of Triangle : ");
+		System.out.println("Enter The Side 2 Of Triangle : ");
 		rec.s2 = input.nextDouble();
 
-		System.out.println("Enter The Length Of Triangle : ");
+		System.out.println("Enter The Side 3 Of Triangle : ");
 		rec.s3 = input.nextDouble();
 
+		rec.Area();
 		rec.Perimeter();
 
 	}
