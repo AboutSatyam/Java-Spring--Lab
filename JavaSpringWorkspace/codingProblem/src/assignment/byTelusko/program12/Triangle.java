@@ -38,6 +38,7 @@ public class Triangle implements Shape {
 		rec.height = input.nextDouble();
 
 		rec.Area();
+		System.out.println("");
 
 		System.out.println("Enter The Side 1 Of Triangle : ");
 		rec.s1 = input.nextDouble();
@@ -48,7 +49,7 @@ public class Triangle implements Shape {
 		System.out.println("Enter The Side 3 Of Triangle : ");
 		rec.s3 = input.nextDouble();
 
-		rec.Area();
+		// rec.Area();
 		rec.Perimeter();
 
 	}
