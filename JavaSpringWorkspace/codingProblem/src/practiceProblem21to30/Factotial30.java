@@ -21,7 +21,7 @@ public class Factotial30 {
 		long multiply = 1;
 		int i = 2;
 		while (i <= num) {
-			multiply += i;
+			multiply *= i;
 			i++;
 
 		}
