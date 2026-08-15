@@ -1,8 +1,8 @@
 package assignment.byTelusko.program12;
 
 public interface Shape {
-	void area();
+	void Area();
 
-	void perimeter();
+	void Perimeter();
 
 }
