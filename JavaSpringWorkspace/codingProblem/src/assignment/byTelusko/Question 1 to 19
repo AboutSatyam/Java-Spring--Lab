@@ -66,15 +66,20 @@ Calculate and display the simple interest.
  */
 
 /**
- * 11. Design an abstract class "BankAccount" with abstract methods for deposit, withdrawal, and displayBalance. Create concrete subclasses like "SavingsAccount" and "CheckingAccount" that extend the BankAccount class and implement these methods.
+ * 11. Design an abstract class "BankAccount" with abstract methods for deposit,
+  withdrawal, and displayBalance. Create concrete subclasses like "SavingsAccount" 
+  and "CheckingAccount" that extend the BankAccount class and implement these methods.
  */
 
 /**
- * 12. Construct an interface "Shape" with methods for area and perimeter calculation. Implement this interface in classes like "Square," "Triangle," etc., providing specific logic for area and perimeter calculations.
+ * 12. Construct an interface "Shape" with methods for area and perimeter calculation.
+  Implement this interface in classes like "Square," "Triangle," etc., providing specific
+  logic for area and perimeter calculations.
  */
 
 /**
- * 13. Create a class "Calculator" with methods for basic arithmetic operations like division, ensuring proper exception handling for divide-by-zero scenarios using try-catch blocks.
+ * 13. Create a class "Calculator" with methods for basic arithmetic operations like division,
+  ensuring proper exception handling for divide-by-zero scenarios using try-catch blocks.
  */
 
 /**
