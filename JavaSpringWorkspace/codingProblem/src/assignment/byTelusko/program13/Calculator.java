@@ -17,10 +17,8 @@ public class Calculator {
 		try {
 			int res = num1 / num2;
 			System.out.println("The Division of Given No " + res);
-		}
-
-		catch (ArithmeticException e) {
-
+		} catch (ArithmeticException e) {
+			System.out.println("Cannot Divide By Zero");
 		}
 
 	}
