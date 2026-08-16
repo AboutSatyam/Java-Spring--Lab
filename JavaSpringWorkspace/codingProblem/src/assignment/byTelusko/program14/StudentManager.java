@@ -1,3 +1,4 @@
+
 package assignment.byTelusko.program14;
 
 import java.util.HashMap;
@@ -11,10 +12,11 @@ public class StudentManager {
 	void addStudent() {
 
 		Scanner input = new Scanner(System.in);
+
 		System.out.println("Enter Your Student ID : ");
 		int id = input.nextInt();
 
-		System.out.println("Enter Your Student Name: ");
+		System.out.println("Enter Your Student Name : ");
 		String name = input.next();
 
 		System.out.println("Enter Your Student Age : ");
@@ -26,11 +28,12 @@ public class StudentManager {
 		Student student = new Student(name, age, grade);
 
 		hm.put(id, student);
-		System.out.println("Student Added Successfully");
 
+		System.out.println("Student Added Successfully\n");
 	}
 
 	void displayStudent() {
+
 		for (Map.Entry<Integer, Student> entry : hm.entrySet()) {
 
 			System.out.println("Student ID : " + entry.getKey());
@@ -39,8 +42,7 @@ public class StudentManager {
 
 			System.out.println("Name : " + student.name);
 			System.out.println("Age : " + student.age);
-			System.out.println("Grade : " + student.grade);
-
+			System.out.println("Grade : " + student.grade + "\n");
 		}
 	}
 
@@ -53,7 +55,7 @@ public class StudentManager {
 
 		if (hm.containsKey(id)) {
 
-			System.out.println("Enter Your Student Name: ");
+			System.out.println("Enter Your Student Name : ");
 			String name = input.next();
 
 			System.out.println("Enter Your Student Age : ");
@@ -65,27 +67,45 @@ public class StudentManager {
 			Student student = new Student(name, age, grade);
 
 			hm.put(id, student);
-			System.out.println("Student Updated Successfully");
+
+			System.out.println("Student Updated Successfully\n");
 
 		} else {
-			System.out.println("ID NOT FOUND !!!");
-		}
 
+			System.out.println("ID NOT FOUND !!!\n");
+		}
 	}
 
 	void removeStudent() {
+
 		System.out.println("Enter Your Student ID :");
 
 		Scanner input = new Scanner(System.in);
 		int id = input.nextInt();
+
 		if (hm.containsKey(id)) {
 
 			hm.remove(id);
-			System.out.println("Student Removed Successfully");
+
+			System.out.println("Student Removed Successfully\n");
 
 		} else {
-			System.out.println("ID NOT FOUND !!!");
+
+			System.out.println("ID NOT FOUND !!!\n");
 		}
+	}
+
+	public static void main(String[] args) {
+
+		StudentManager sm = new StudentManager();
+
+		sm.addStudent();
+		sm.displayStudent();
+		sm.updateStudent();
+		sm.displayStudent();
+		sm.removeStudent();
+		sm.displayStudent();
+
 	}
 
 }
