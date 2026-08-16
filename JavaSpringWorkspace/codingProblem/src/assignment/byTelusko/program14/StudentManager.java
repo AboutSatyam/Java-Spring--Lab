@@ -1,6 +1,7 @@
 package assignment.byTelusko.program14;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class StudentManager {
@@ -30,7 +31,17 @@ public class StudentManager {
 	}
 
 	void displayStudent() {
+		for (Map.Entry<Integer, Student> entry : hm.entrySet()) {
 
+			System.out.println("Student ID : " + entry.getKey());
+
+			Student student = entry.getValue();
+
+			System.out.println("Name : " + student.name);
+			System.out.println("Age : " + student.age);
+			System.out.println("Grade : " + student.grade);
+
+		}
 	}
 
 	void updateStudent() {
