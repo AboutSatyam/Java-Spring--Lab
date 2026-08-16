@@ -1,113 +1,81 @@
 package assignment.byTelusko.program15;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
+
 public class ContactManager {
 
-	HashMap<Integer, Contact> hm = new HashMap<>();
+	HashMap<String, Contact> hm = new HashMap<>();
 
-	void addStudent() {
+	void addContact() {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Enter Your Student ID : ");
-		int id = input.nextInt();
-
-		System.out.println("Enter Your Student Name : ");
+		System.out.println("Enter Your Name : ");
 		String name = input.next();
 
-		System.out.println("Enter Your Student Age : ");
-		int age = input.nextInt();
+		System.out.println("Enter Your Contact No : ");
+		String phone = input.next();
 
-		System.out.println("Enter Your Student Grade : ");
-		String grade = input.next();
+		System.out.println("Enter Your Email : ");
+		String email = input.next();
 
-		Student student = new Student(name, age, grade);
+		Contact con = new Contact(name, phone, email);
 
-		hm.put(id, student);
+		hm.put(name, con);
 
-		System.out.println("Student Added Successfully\n");
+		System.out.println("Contact Added Successfully\n");
 	}
 
-	void displayStudent() {
-
-		for (Map.Entry<Integer, Student> entry : hm.entrySet()) {
-
-			System.out.println("Student ID : " + entry.getKey());
-
-			Student student = entry.getValue();
-
-			System.out.println("Name : " + student.name);
-			System.out.println("Age : " + student.age);
-			System.out.println("Grade : " + student.grade + "\n");
-		}
-	}
-
-	void updateStudent() {
-
-		System.out.println("Enter Your Student ID :");
+	void getContact() {
 
 		Scanner input = new Scanner(System.in);
-		int id = input.nextInt();
 
-		if (hm.containsKey(id)) {
+		System.out.println("Enter Contact Name : ");
+		String name = input.next();
 
-			System.out.println("Enter Your Student Name : ");
-			String name = input.next();
+		if (hm.containsKey(name)) {
 
-			System.out.println("Enter Your Student Age : ");
-			int age = input.nextInt();
+			Contact con = hm.get(name);
 
-			System.out.println("Enter Your Student Grade : ");
-			String grade = input.next();
-
-			Student student = new Student(name, age, grade);
-
-			hm.put(id, student);
-
-			System.out.println("Student Updated Successfully\n");
+			System.out.println("Name : " + con.name);
+			System.out.println("Phone : " + con.phone);
+			System.out.println("Email : " + con.email + "\n");
 
 		} else {
 
-			System.out.println("ID NOT FOUND !!!\n");
+			System.out.println("Contact Not Found !!!\n");
 		}
 	}
 
-	void removeStudent() {
-
-		System.out.println("Enter Your Student ID :");
+	void removeContact() {
 
 		Scanner input = new Scanner(System.in);
-		int id = input.nextInt();
 
-		if (hm.containsKey(id)) {
+		System.out.println("Enter Contact Name : ");
+		String name = input.next();
 
-			hm.remove(id);
+		if (hm.containsKey(name)) {
 
-			System.out.println("Student Removed Successfully\n");
+			hm.remove(name);
+
+			System.out.println("Contact Removed Successfully\n");
 
 		} else {
 
-			System.out.println("ID NOT FOUND !!!\n");
+			System.out.println("Contact Not Found !!!\n");
 		}
 	}
 
 	public static void main(String[] args) {
 
-		ContactManager sm = new ContactManager();
+		ContactManager cm = new ContactManager();
 
-		sm.addStudent();
-		sm.displayStudent();
-		sm.updateStudent();
-		sm.displayStudent();
-		sm.removeStudent();
-		sm.displayStudent();
+		cm.addContact();
+		cm.getContact();
+		cm.removeContact();
+		cm.getContact();
 
 	}
-
-}
-
-	
 
 }
