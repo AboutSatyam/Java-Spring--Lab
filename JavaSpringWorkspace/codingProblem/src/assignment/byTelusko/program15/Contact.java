@@ -5,18 +5,15 @@ import java.util.HashMap;
 
 public class Contact {
 
-
 	String name;
-	String age;
-	String grade;
+	String phone;
+	String email;
 
-	public  Contact(String name, String age, String grade) {
-			super();
-			this.name = name;
-			this.age = age;
-			this.grade = grade;
-		}
-
-}
+	public Contact(String name, String phone, String email) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+	}
 
 }
