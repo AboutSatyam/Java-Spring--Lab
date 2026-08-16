@@ -11,17 +11,20 @@ public class StudentManager {
 
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter Your Student ID : ");
-		int ID = input.nextInt();
+		int id = input.nextInt();
 
 		System.out.println("Enter Your Student Name: ");
-		String Name = input.next();
+		String name = input.next();
 
 		System.out.println("Enter Your Student Age : ");
-		int Age = input.nextInt();
+		int age = input.nextInt();
 
 		System.out.println("Enter Your Student Grade : ");
-		String Grade = input.next();
+		String grade = input.next();
 
+		Student student = new Student(name, age, grade);
+
+		hm.put(id, student);
 		System.out.println("Student Added Successfully");
 
 	}
