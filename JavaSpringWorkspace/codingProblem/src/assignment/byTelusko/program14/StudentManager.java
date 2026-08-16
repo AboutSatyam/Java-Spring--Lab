@@ -46,10 +46,46 @@ public class StudentManager {
 
 	void updateStudent() {
 
+		System.out.println("Enter Your Student ID :");
+
+		Scanner input = new Scanner(System.in);
+		int id = input.nextInt();
+
+		if (hm.containsKey(id)) {
+
+			System.out.println("Enter Your Student Name: ");
+			String name = input.next();
+
+			System.out.println("Enter Your Student Age : ");
+			int age = input.nextInt();
+
+			System.out.println("Enter Your Student Grade : ");
+			String grade = input.next();
+
+			Student student = new Student(name, age, grade);
+
+			hm.put(id, student);
+			System.out.println("Student Updated Successfully");
+
+		} else {
+			System.out.println("ID NOT FOUND !!!");
+		}
+
 	}
 
 	void removeStudent() {
+		System.out.println("Enter Your Student ID :");
 
+		Scanner input = new Scanner(System.in);
+		int id = input.nextInt();
+		if (hm.containsKey(id)) {
+
+			hm.remove(id);
+			System.out.println("Student Removed Successfully");
+
+		} else {
+			System.out.println("ID NOT FOUND !!!");
+		}
 	}
 
 }
