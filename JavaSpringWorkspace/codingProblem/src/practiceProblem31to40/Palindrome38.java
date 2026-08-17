@@ -25,10 +25,10 @@ public class Palindrome38 {
 	public static boolean isPalindrome(int num) {
 
 		int Reverse = Reverse(num);
-		return num == Reverse; // we only write this line beacuse we have to check user number and its rerverse
+		return num == Reverse; // we only write this line because we have to check user number and its rerverse
 								// number is same or not
 
-		// return num == Reverse(num); //This is same as above 2 line but is shortfrom.
+		// return num == Reverse(num); //This is same as above 2 line but is Shortfrom.
 	}
 
 	public static int Reverse(int num) {
