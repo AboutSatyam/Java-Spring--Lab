@@ -73,7 +73,9 @@ public class MenuManager {
 
 			System.out.println("Dish NOT FOUND !!!\n");
 		}
+	input.close();
 	}
+	
 
 	public static void main(String[] args) {
 
