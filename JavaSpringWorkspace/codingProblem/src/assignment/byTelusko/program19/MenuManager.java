@@ -56,28 +56,6 @@ public class MenuManager {
 		}
 	}
 
-//	void removeMenu() {
-//
-//		System.out.println("Enter The Dish Name Again :");
-//
-//		Scanner input = new Scanner(System.in);
-//		String name = input.next();
-//
-//		if (menu.containsKey(name)) {
-//
-//			System.out.println("Enter The New Price : ");
-//			Double price = input.nextDouble();
-//
-//			menu.put(name, price);
-//
-//			System.out.println("Price Updated Successfully\n");
-//
-//		} else {
-//
-//			System.out.println("NAME NOT FOUND !!!\n");
-//		}
-//	}
-
 	void removeMenu() {
 
 		System.out.println("Enter The Dish Name To remove  :");

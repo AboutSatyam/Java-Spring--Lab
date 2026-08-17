@@ -1,7 +1,5 @@
 package assignment.byTelusko.program14;
 
-import java.util.HashMap;
-
 public class Student {
 
 	String name;
