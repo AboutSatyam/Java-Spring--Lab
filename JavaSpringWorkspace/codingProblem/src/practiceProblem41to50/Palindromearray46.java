@@ -23,16 +23,12 @@ public class Palindromearray46 {
 		int i = 0;
 
 		while (i < numArray.length / 2) {
-					
+
 			if (numArray[i] != numArray[numArray.length - 1 - i]) {
 				return false;
 			}
 			i++;
 
-			
-			
-			
-			
 		}
 
 		return true;
