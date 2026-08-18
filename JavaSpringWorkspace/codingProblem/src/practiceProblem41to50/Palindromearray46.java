@@ -29,6 +29,10 @@ public class Palindromearray46 {
 			}
 			i++;
 
+			
+			
+			
+			
 		}
 
 		return true;
