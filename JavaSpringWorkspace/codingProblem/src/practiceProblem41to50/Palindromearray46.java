@@ -1,12 +1,8 @@
 package practiceProblem41to50;
 
-import java.util.Scanner;
-
 public class Palindromearray46 {
 
 	public static void main(String[] args) {
-
-		Scanner Scan = new Scanner(System.in);
 
 		System.out.println("Welcome To Palindrome Checker \n");
 		int[] numArray = ArrayUtility.inputArray();
