@@ -18,8 +18,6 @@ class dog {
 		return cost;
 	}
 
-	
-	
 	public void setCost(int cost) {
 		this.cost = cost;
 	}
@@ -48,11 +46,10 @@ public class AvoidSetter {
 
 		dog doggy = new dog(400, "Shreu", "White");
 
-		
 		System.out.println(doggy.getCost());
 		System.out.println(doggy.getName());
 		System.out.println(doggy.getColor());
-		
+		System.out.println(doggy.getName());
 
 	}
 
