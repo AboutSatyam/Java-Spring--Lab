@@ -18,6 +18,8 @@ class dog {
 		return cost;
 	}
 
+	
+	
 	public void setCost(int cost) {
 		this.cost = cost;
 	}
