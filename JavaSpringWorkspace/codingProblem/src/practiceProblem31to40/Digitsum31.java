@@ -5,13 +5,12 @@ import java.util.Scanner;
 public class Digitsum31 {
 
 	public static void main(String[] args) {
-		
 
-		Scanner Scan = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 
 		System.out.println("Welcome To Digitsum Calculator  ");
 		System.out.print(" Enter The Number : ");
-		int num = Scan.nextInt();
+		int num = input.nextInt();
 		int sum = digitSum(num);
 		System.out.println("Sum of digit is : " + sum);
 	}
