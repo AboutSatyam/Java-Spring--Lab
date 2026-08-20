@@ -13,6 +13,7 @@ public class Digitsum31 {
 		int num = input.nextInt();
 		int sum = digitSum(num);
 		System.out.println("Sum of digit is : " + sum);
+		input.close();
 	}
 
 	public static int digitSum(int num) {
