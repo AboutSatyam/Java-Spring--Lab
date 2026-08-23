@@ -28,6 +28,7 @@ public class Digitsum31 {
 			}
 			return sum;
 
+			
 		}
 
 	}
