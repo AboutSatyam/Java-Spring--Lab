@@ -2,7 +2,7 @@ package jdbc;
 
 import java.sql.*;
 
-public class JDBC1 {
+public class CompleteJDBC {
 
 	public static void main(String[] args) {
 
