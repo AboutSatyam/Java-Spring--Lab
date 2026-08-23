@@ -46,7 +46,6 @@ public class CompleteJDBC {
 		String user = "root";
 
 		String password = "1234";
-
 		// =========================================================
 		// 3. ESTABLISH CONNECTION
 		// =========================================================

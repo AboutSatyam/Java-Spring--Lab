@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.utility;
 
 import java.sql.*;
 
@@ -19,41 +19,24 @@ public class JDBCUtility {
 	// =========================================================
 	// 1. LOAD AND REGISTER DRIVER
 	// =========================================================
+
 	/*
-	 * Loads and registers the JDBC Driver.
+	 * Loads and registers JDBC Driver.
 	 *
-	 * Call this once when the application starts.
+	 * Exception is passed to caller.
 	 */
 
-	public static void loadDriver() {
+	public static void loadDriver() throws ClassNotFoundException {
 
-		try {
-
-			Class.forName(DRIVER);
-
-			System.out.println("JDBC Driver Loaded Successfully!");
-
-		} catch (ClassNotFoundException e) {
-
-			System.out.println("JDBC Driver Not Found!");
-
-			e.printStackTrace();
-		}
+		Class.forName(DRIVER);
 	}
 
 	// =========================================================
 	// 2. ESTABLISH CONNECTION
 	// =========================================================
+
 	/*
-	 * Creates and returns a database Connection.
-	 *
-	 * Instead of writing:
-	 *
-	 * DriverManager.getConnection(...)
-	 *
-	 * in every class, we can simply use:
-	 *
-	 * JDBCUtility.getConnection();
+	 * Creates database connection.
 	 */
 
 	public static Connection getConnection() throws SQLException {
@@ -62,238 +45,337 @@ public class JDBCUtility {
 	}
 
 	// =========================================================
-	// 3. CLOSE RESULTSET
+	// 3. CREATE STATEMENT
 	// =========================================================
+
 	/*
-	 * Closes ResultSet safely.
+	 * Creates a Statement object.
 	 *
-	 * ResultSet is generally used for SELECT queries.
+	 * Used mainly for static SQL queries.
 	 */
 
-	public static void closeResultSet(ResultSet result) {
+	public static Statement createStatement(Connection connect) throws SQLException {
+
+		return connect.createStatement();
+	}
+
+	// =========================================================
+	// 4. CREATE PREPAREDSTATEMENT
+	// =========================================================
+
+	/*
+	 * Creates PreparedStatement.
+	 *
+	 * Used for parameterized SQL:
+	 *
+	 * SELECT * FROM studentInfo WHERE id = ?
+	 */
+
+	public static PreparedStatement prepareStatement(Connection connect, String sql) throws SQLException {
+
+		return connect.prepareStatement(sql);
+	}
+
+	// =========================================================
+	// 5. CREATE CALLABLESTATEMENT
+	// =========================================================
+
+	/*
+	 * Creates CallableStatement.
+	 *
+	 * Used to call Stored Procedures.
+	 *
+	 * Example:
+	 *
+	 * {call getStudent(?)}
+	 */
+
+	public static CallableStatement prepareCall(Connection connect, String sql) throws SQLException {
+
+		return connect.prepareCall(sql);
+	}
+
+	// =========================================================
+	// 6. CREATE PREPAREDSTATEMENT
+	// WITH GENERATED KEYS
+	// =========================================================
+
+	/*
+	 * Used when database generates an ID automatically.
+	 *
+	 * Usually used with AUTO_INCREMENT.
+	 */
+
+	public static PreparedStatement prepareStatementWithKeys(Connection connect, String sql) throws SQLException {
+
+		return connect.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+	}
+
+	// =========================================================
+	// 7. CREATE SCROLLABLE STATEMENT
+	// =========================================================
+
+	/*
+	 * Creates a Statement with scrollable ResultSet.
+	 *
+	 * Allows:
+	 *
+	 * first() last() previous() next()
+	 */
+
+	public static Statement createScrollableStatement(Connection connect) throws SQLException {
+
+		return connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	}
+
+	// =========================================================
+	// 8. CLOSE RESULTSET
+	// =========================================================
+
+	/*
+	 * Closes ResultSet.
+	 */
+
+	public static void closeResultSet(ResultSet result) throws SQLException {
 
 		if (result != null) {
-
-			try {
-
-				result.close();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
+			result.close();
 		}
 	}
 
 	// =========================================================
-	// 4. CLOSE STATEMENT
+	// 9. CLOSE STATEMENT
 	// =========================================================
+
 	/*
-	 * Closes Statement safely.
+	 * Closes Statement.
 	 */
 
-	public static void closeStatement(Statement statement) {
+	public static void closeStatement(Statement statement) throws SQLException {
 
 		if (statement != null) {
-
-			try {
-
-				statement.close();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
+			statement.close();
 		}
 	}
 
 	// =========================================================
-	// 5. CLOSE PREPAREDSTATEMENT
+	// 10. CLOSE PREPAREDSTATEMENT
 	// =========================================================
+
 	/*
-	 * PreparedStatement extends Statement.
-	 *
-	 * So it can technically be closed using closeStatement(), but having a separate
-	 * method makes the utility easier to understand.
+	 * Closes PreparedStatement.
 	 */
 
-	public static void closePreparedStatement(PreparedStatement ps) {
+	public static void closePreparedStatement(PreparedStatement ps) throws SQLException {
 
 		if (ps != null) {
-
-			try {
-
-				ps.close();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
+			ps.close();
 		}
 	}
 
 	// =========================================================
-	// 6. CLOSE CALLABLESTATEMENT
+	// 11. CLOSE CALLABLESTATEMENT
 	// =========================================================
+
 	/*
-	 * Closes CallableStatement safely.
+	 * Closes CallableStatement.
 	 */
 
-	public static void closeCallableStatement(CallableStatement cs) {
+	public static void closeCallableStatement(CallableStatement cs) throws SQLException {
 
 		if (cs != null) {
-
-			try {
-
-				cs.close();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
+			cs.close();
 		}
 	}
 
 	// =========================================================
-	// 7. CLOSE CONNECTION
+	// 12. CLOSE CONNECTION
 	// =========================================================
+
 	/*
-	 * Closes database connection safely.
+	 * Closes database Connection.
 	 */
 
-	public static void closeConnection(Connection connect) {
+	public static void closeConnection(Connection connect) throws SQLException {
 
 		if (connect != null) {
-
-			try {
-
-				connect.close();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
+			connect.close();
 		}
 	}
 
 	// =========================================================
-	// 8. COMMIT TRANSACTION
+	// 13. COMMIT TRANSACTION
 	// =========================================================
+
 	/*
-	 * Permanently saves all changes made during the current transaction.
+	 * Permanently saves transaction changes.
 	 */
 
-	public static void commit(Connection connect) {
+	public static void commit(Connection connect) throws SQLException {
 
-		if (connect != null) {
-
-			try {
-
-				connect.commit();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
+		connect.commit();
 	}
 
 	// =========================================================
-	// 9. ROLLBACK TRANSACTION
+	// 14. ROLLBACK TRANSACTION
 	// =========================================================
+
 	/*
-	 * Cancels all changes made during the current transaction.
+	 * Cancels transaction changes.
 	 */
 
-	public static void rollback(Connection connect) {
+	public static void rollback(Connection connect) throws SQLException {
 
-		if (connect != null) {
-
-			try {
-
-				connect.rollback();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
+		connect.rollback();
 	}
 
 	// =========================================================
-	// 10. SET AUTO COMMIT
+	// 15. SET AUTO COMMIT
 	// =========================================================
+
 	/*
-	 * Auto Commit:
-	 *
 	 * true: Each SQL statement is automatically committed.
 	 *
 	 * false: Multiple SQL statements can be treated as one transaction.
 	 */
 
-	public static void setAutoCommit(Connection connect, boolean autoCommit) {
+	public static void setAutoCommit(Connection connect, boolean autoCommit) throws SQLException {
 
-		if (connect != null) {
-
-			try {
-
-				connect.setAutoCommit(autoCommit);
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
+		connect.setAutoCommit(autoCommit);
 	}
 
 	// =========================================================
-	// 11. GET DATABASE METADATA
+	// 16. GET AUTO COMMIT
 	// =========================================================
+
 	/*
-	 * Returns information about the database.
+	 * Returns current Auto Commit status.
 	 */
 
-	public static DatabaseMetaData getDatabaseMetaData(Connection connect) {
+	public static boolean getAutoCommit(Connection connect) throws SQLException {
 
-		if (connect != null) {
-
-			try {
-
-				return connect.getMetaData();
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
-
-		return null;
+		return connect.getAutoCommit();
 	}
 
 	// =========================================================
-	// 12. PRINT DATABASE INFORMATION
+	// 17. GET DATABASE METADATA
 	// =========================================================
+
 	/*
-	 * Prints useful database information.
+	 * Returns information about database.
 	 */
 
-	public static void printDatabaseInfo(Connection connect) {
+	public static DatabaseMetaData getDatabaseMetaData(Connection connect) throws SQLException {
 
-		try {
+		return connect.getMetaData();
+	}
 
-			DatabaseMetaData metaData = connect.getMetaData();
+	// =========================================================
+	// 18. GET RESULTSET METADATA
+	// =========================================================
 
-			System.out.println("Database Name: " + metaData.getDatabaseProductName());
+	/*
+	 * Returns information about ResultSet columns.
+	 */
 
-			System.out.println("Database Version: " + metaData.getDatabaseProductVersion());
+	public static ResultSetMetaData getResultSetMetaData(ResultSet result) throws SQLException {
 
-			System.out.println("Driver Name: " + metaData.getDriverName());
+		return result.getMetaData();
+	}
 
-			System.out.println("Driver Version: " + metaData.getDriverVersion());
+	// =========================================================
+	// 19. GET GENERATED KEYS
+	// =========================================================
 
-		} catch (SQLException e) {
+	/*
+	 * Returns automatically generated database keys.
+	 *
+	 * Example: AUTO_INCREMENT ID
+	 */
 
-			e.printStackTrace();
-		}
+	public static ResultSet getGeneratedKeys(PreparedStatement ps) throws SQLException {
+
+		return ps.getGeneratedKeys();
+	}
+
+	// =========================================================
+	// 20. GET TRANSACTION ISOLATION
+	// =========================================================
+
+	/*
+	 * Returns current transaction isolation level.
+	 */
+
+	public static int getTransactionIsolation(Connection connect) throws SQLException {
+
+		return connect.getTransactionIsolation();
+	}
+
+	// =========================================================
+	// 21. SET TRANSACTION ISOLATION
+	// =========================================================
+
+	/*
+	 * Sets transaction isolation level.
+	 *
+	 * Example:
+	 *
+	 * Connection.TRANSACTION_READ_COMMITTED
+	 */
+
+	public static void setTransactionIsolation(Connection connect, int level) throws SQLException {
+
+		connect.setTransactionIsolation(level);
+	}
+
+	// =========================================================
+	// 22. ADD BATCH
+	// =========================================================
+
+	/*
+	 * Adds SQL command to batch.
+	 *
+	 * Used for executing multiple operations together.
+	 */
+
+	public static void addBatch(Statement statement, String sql) throws SQLException {
+
+		statement.addBatch(sql);
+	}
+
+	// =========================================================
+	// 23. EXECUTE BATCH
+	// =========================================================
+
+	/*
+	 * Executes all commands added to batch.
+	 *
+	 * Returns number of affected results.
+	 */
+
+	public static int[] executeBatch(Statement statement) throws SQLException {
+
+		return statement.executeBatch();
+	}
+
+	// =========================================================
+	// 24. PRINT DATABASE INFORMATION
+	// =========================================================
+
+	/*
+	 * Prints database and JDBC driver information.
+	 */
+
+	public static void printDatabaseInfo(Connection connect) throws SQLException {
+
+		DatabaseMetaData metaData = connect.getMetaData();
+
+		System.out.println("Database Name: " + metaData.getDatabaseProductName());
+
+		System.out.println("Database Version: " + metaData.getDatabaseProductVersion());
+
+		System.out.println("Driver Name: " + metaData.getDriverName());
+
+		System.out.println("Driver Version: " + metaData.getDriverVersion());
 	}
 }
