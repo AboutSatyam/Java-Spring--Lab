@@ -9,12 +9,6 @@ public class CompleteJDBC {
 		// =========================================================
 		// 1. LOAD AND REGISTER JDBC DRIVER
 		// =========================================================
-		/*
-		 * JDBC Driver: - Connects Java application with the database. - Class.forName()
-		 * loads and registers the MySQL Driver.
-		 *
-		 * MySQL Driver: com.mysql.cj.jdbc.Driver
-		 */
 
 		try {
 
@@ -33,27 +27,16 @@ public class CompleteJDBC {
 		// =========================================================
 		// 2. DATABASE DETAILS
 		// =========================================================
-		/*
-		 * URL: - Contains database type, server, port and database name.
-		 *
-		 * jdbc:mysql://localhost:3306/jdbc
-		 *
-		 * localhost = database server 3306 = MySQL default port jdbc = database name
-		 */
 
 		String url = "jdbc:mysql://localhost:3306/jdbc";
 
 		String user = "root";
 
 		String password = "1234";
+
 		// =========================================================
 		// 3. ESTABLISH CONNECTION
 		// =========================================================
-		/*
-		 * Connection: - Represents connection between Java application and database.
-		 *
-		 * DriverManager.getConnection() - Creates the database connection.
-		 */
 
 		try (Connection connect = DriverManager.getConnection(url, user, password)) {
 
@@ -62,12 +45,6 @@ public class CompleteJDBC {
 			// =====================================================
 			// 4. CONNECTION INFORMATION
 			// =====================================================
-			/*
-			 * getCatalog() - Returns current database name.
-			 *
-			 * getAutoCommit() - Returns true if every SQL statement is automatically
-			 * committed.
-			 */
 
 			System.out.println("Database: " + connect.getCatalog());
 
@@ -76,12 +53,6 @@ public class CompleteJDBC {
 			// =====================================================
 			// 5. DATABASE METADATA
 			// =====================================================
-			/*
-			 * DatabaseMetaData: - Provides information about the database.
-			 *
-			 * Examples: - Database name - Database version - JDBC driver name - Driver
-			 * version
-			 */
 
 			DatabaseMetaData databaseMetaData = connect.getMetaData();
 
@@ -94,13 +65,6 @@ public class CompleteJDBC {
 			// =====================================================
 			// 6. CREATE STATEMENT
 			// =====================================================
-			/*
-			 * Statement: - Used to execute SQL queries.
-			 *
-			 * createStatement() - Creates a Statement object.
-			 *
-			 * Mainly used for: - Static SQL queries
-			 */
 
 			try (Statement statement = connect.createStatement()) {
 
@@ -108,11 +72,6 @@ public class CompleteJDBC {
 				// IF → SELECT
 				// ELSE → INSERT + UPDATE + DELETE
 				// =================================================
-				/*
-				 * if-else: - Used here to select which operation to execute.
-				 *
-				 * choice = 1 → SELECT choice != 1 → INSERT, UPDATE, DELETE
-				 */
 
 				int choice = 1;
 
@@ -121,11 +80,6 @@ public class CompleteJDBC {
 					// =============================================
 					// 7. SELECT QUERY
 					// =============================================
-					/*
-					 * SELECT: - Used to retrieve data from database.
-					 *
-					 * executeQuery(): - Used for SELECT queries. - Returns ResultSet.
-					 */
 
 					String selectSql = "SELECT * FROM studentInfo";
 
@@ -134,14 +88,6 @@ public class CompleteJDBC {
 					// =============================================
 					// 8. RESULTSETMETADATA
 					// =============================================
-					/*
-					 * ResultSetMetaData: - Provides information about columns returned by SELECT
-					 * query.
-					 *
-					 * getColumnCount() - Returns number of columns.
-					 *
-					 * getColumnName() - Returns column name.
-					 */
 
 					ResultSetMetaData metaData = result.getMetaData();
 
@@ -159,15 +105,6 @@ public class CompleteJDBC {
 					// =============================================
 					// 9. RESULTSET
 					// =============================================
-					/*
-					 * ResultSet: - Stores data returned by SELECT query.
-					 *
-					 * next(): - Moves cursor to next row.
-					 *
-					 * getInt(): - Reads integer value.
-					 *
-					 * getString(): - Reads String value.
-					 */
 
 					System.out.println("\n--- Student Data ---");
 
@@ -184,15 +121,11 @@ public class CompleteJDBC {
 					// =============================================
 					// 10. INSERT QUERY
 					// =============================================
-					/*
-					 * INSERT: - Adds new record to database.
-					 *
-					 * executeUpdate(): - Used for INSERT, UPDATE and DELETE. - Returns number of
-					 * affected rows.
-					 */
 
-					String insertSql = "INSERT INTO studentInfo" + "(id, sname, sage, scity)" + " VALUES"
-							+ "(4, 'Amit', 20, 'Mumbai')";
+					int nextId = getNextId(connect);
+
+					String insertSql = "INSERT INTO studentInfo " + "(id, sname, sage, scity) " + "VALUES (" + nextId
+							+ ", 'Amit', 20, 'Mumbai')";
 
 					int insertRows = statement.executeUpdate(insertSql);
 
@@ -204,15 +137,8 @@ public class CompleteJDBC {
 					// =============================================
 					// 11. UPDATE QUERY
 					// =============================================
-					/*
-					 * UPDATE: - Modifies existing records.
-					 *
-					 * SET: - Specifies new value.
-					 *
-					 * WHERE: - Specifies which record should be updated.
-					 */
 
-					String updateSql = "UPDATE studentInfo " + "SET sage = 21 " + "WHERE id = 4";
+					String updateSql = "UPDATE studentInfo " + "SET sage = 21 " + "WHERE id = " + nextId;
 
 					int updateRows = statement.executeUpdate(updateSql);
 
@@ -224,13 +150,8 @@ public class CompleteJDBC {
 					// =============================================
 					// 12. DELETE QUERY
 					// =============================================
-					/*
-					 * DELETE: - Removes records from database.
-					 *
-					 * Always use WHERE carefully.
-					 */
 
-					String deleteSql = "DELETE FROM studentInfo " + "WHERE id = 4";
+					String deleteSql = "DELETE FROM studentInfo " + "WHERE id = " + nextId;
 
 					int deleteRows = statement.executeUpdate(deleteSql);
 
@@ -243,11 +164,6 @@ public class CompleteJDBC {
 				// =================================================
 				// 13. execute()
 				// =================================================
-				/*
-				 * execute(): - Can execute different types of SQL statements.
-				 *
-				 * Returns: true → ResultSet is returned false → update count or no ResultSet
-				 */
 
 				String sql = "SELECT * FROM studentInfo";
 
@@ -263,299 +179,218 @@ public class CompleteJDBC {
 						}
 					}
 				}
-			}
 
-			// =====================================================
-			// 14. PREPAREDSTATEMENT
-			// =====================================================
-			/*
-			 * PreparedStatement: - Used for parameterized SQL queries. - Uses ? as
-			 * placeholder. - More secure than normal Statement. - Helps prevent SQL
-			 * Injection. - Can be reused with different values.
-			 */
+				// =================================================
+				// 14. PREPAREDSTATEMENT - SELECT
+				// =================================================
 
-			String preparedSql = "SELECT * FROM studentInfo WHERE id = ?";
+				String preparedSql = "SELECT * FROM studentInfo " + "WHERE id = ?";
 
-			try (PreparedStatement ps = connect.prepareStatement(preparedSql)) {
+				try (PreparedStatement ps = connect.prepareStatement(preparedSql)) {
 
-				// Set value for ?
-				/*
-				 * setInt(1, 1)
-				 *
-				 * First 1 = parameter number Second 1 = value
-				 */
+					ps.setInt(1, 1);
 
-				ps.setInt(1, 1);
+					ResultSet result = ps.executeQuery();
 
-				ResultSet result = ps.executeQuery();
+					while (result.next()) {
 
-				while (result.next()) {
+						System.out.println(result.getInt("id") + "\t" + result.getString("sname") + "\t"
+								+ result.getInt("sage") + "\t" + result.getString("scity"));
+					}
 
-					System.out.println(result.getInt("id") + "\t" + result.getString("sname") + "\t"
-							+ result.getInt("sage") + "\t" + result.getString("scity"));
+					result.close();
 				}
 
-				result.close();
-			}
+				// =================================================
+				// 15. PREPAREDSTATEMENT - INSERT
+				// =================================================
 
-			// =====================================================
-			// 15. PREPAREDSTATEMENT INSERT
-			// =====================================================
-			/*
-			 * PreparedStatement can also be used for INSERT, UPDATE and DELETE.
-			 */
+				int preparedId = getNextId(connect);
 
-			String preparedInsert = "INSERT INTO studentInfo" + "(id, sname, sage, scity)" + " VALUES (?, ?, ?, ?)";
+				String preparedInsert = "INSERT INTO studentInfo " + "(id, sname, sage, scity) "
+						+ "VALUES (?, ?, ?, ?)";
 
-			try (PreparedStatement ps = connect.prepareStatement(preparedInsert)) {
+				try (PreparedStatement ps = connect.prepareStatement(preparedInsert)) {
 
-				ps.setInt(1, 5);
-				ps.setString(2, "Rahul");
-				ps.setInt(3, 22);
-				ps.setString(4, "Pune");
+					ps.setInt(1, preparedId);
+					ps.setString(2, "Rahul");
+					ps.setInt(3, 22);
+					ps.setString(4, "Pune");
 
-				int rows = ps.executeUpdate();
+					int rows = ps.executeUpdate();
 
-				System.out.println("PreparedStatement Insert Rows: " + rows);
-			}
-
-			// =====================================================
-			// 16. TRANSACTION MANAGEMENT
-			// =====================================================
-			/*
-			 * Transaction: - A group of SQL operations treated as one unit.
-			 *
-			 * Example: UPDATE 1 UPDATE 2
-			 *
-			 * Both should succeed together.
-			 *
-			 * commit() - Permanently saves changes.
-			 *
-			 * rollback() - Cancels changes.
-			 */
-
-			try {
-
-				// Disable automatic commit
-				connect.setAutoCommit(false);
-
-				String update1 = "UPDATE studentInfo " + "SET sage = 25 " + "WHERE id = 5";
-
-				String update2 = "UPDATE studentInfo " + "SET scity = 'Mumbai' " + "WHERE id = 5";
-
-				try (Statement transactionStatement = connect.createStatement()) {
-
-					transactionStatement.executeUpdate(update1);
-
-					transactionStatement.executeUpdate(update2);
+					System.out.println("PreparedStatement Insert Rows: " + rows);
 				}
 
-				// Save both operations
-				connect.commit();
+				// =================================================
+				// 16. TRANSACTION MANAGEMENT
+				// =================================================
 
-				System.out.println("Transaction Committed!");
+				try {
 
-			} catch (SQLException e) {
+					connect.setAutoCommit(false);
 
-				// Undo transaction
-				connect.rollback();
+					String update1 = "UPDATE studentInfo " + "SET sage = 25 " + "WHERE id = " + preparedId;
 
-				System.out.println("Transaction Rolled Back!");
+					String update2 = "UPDATE studentInfo " + "SET scity = 'Mumbai' " + "WHERE id = " + preparedId;
 
-			} finally {
+					try (Statement transactionStatement = connect.createStatement()) {
 
-				// Enable Auto Commit again
-				connect.setAutoCommit(true);
-			}
+						transactionStatement.executeUpdate(update1);
 
-			// =====================================================
-			// 17. BATCH PROCESSING
-			// =====================================================
-			/*
-			 * Batch Processing: - Executes multiple SQL operations together.
-			 *
-			 * addBatch() - Adds query to batch.
-			 *
-			 * executeBatch() - Executes all queries in batch.
-			 *
-			 * Useful when inserting/updating many records.
-			 */
+						transactionStatement.executeUpdate(update2);
+					}
 
-			String batchSql = "INSERT INTO studentInfo" + "(id, sname, sage, scity)" + " VALUES (?, ?, ?, ?)";
+					connect.commit();
 
-			try (PreparedStatement ps = connect.prepareStatement(batchSql)) {
+					System.out.println("Transaction Committed!");
 
-				ps.setInt(1, 6);
-				ps.setString(2, "Raj");
-				ps.setInt(3, 21);
-				ps.setString(4, "Delhi");
+				} catch (SQLException e) {
 
-				ps.addBatch();
+					connect.rollback();
 
-				ps.setInt(1, 7);
-				ps.setString(2, "Vijay");
-				ps.setInt(3, 23);
-				ps.setString(4, "Pune");
+					System.out.println("Transaction Rolled Back!");
 
-				ps.addBatch();
+				} finally {
 
-				int[] result = ps.executeBatch();
+					connect.setAutoCommit(true);
+				}
 
-				System.out.println("Batch Executed: " + result.length);
-			}
+				// =================================================
+				// 17. BATCH PROCESSING
+				// =================================================
 
-			// =====================================================
-			// 18. GENERATED KEYS
-			// =====================================================
-			/*
-			 * Generated Keys: - Used when database automatically generates ID.
-			 *
-			 * Usually used with AUTO_INCREMENT.
-			 *
-			 * RETURN_GENERATED_KEYS - Tells JDBC to return generated ID.
-			 */
+				int batchId1 = getNextId(connect);
 
-			String generatedSql = "INSERT INTO studentInfo" + "(sname, sage, scity)" + " VALUES (?, ?, ?)";
+				int batchId2 = batchId1 + 1;
 
-			try (PreparedStatement ps = connect.prepareStatement(generatedSql, Statement.RETURN_GENERATED_KEYS)) {
+				String batchSql = "INSERT INTO studentInfo " + "(id, sname, sage, scity) " + "VALUES (?, ?, ?, ?)";
 
-				ps.setString(1, "Karan");
-				ps.setInt(2, 24);
-				ps.setString(3, "Mumbai");
+				try (PreparedStatement ps = connect.prepareStatement(batchSql)) {
 
-				ps.executeUpdate();
+					ps.setInt(1, batchId1);
+					ps.setString(2, "Raj");
+					ps.setInt(3, 21);
+					ps.setString(4, "Delhi");
 
-				try (ResultSet keys = ps.getGeneratedKeys()) {
+					ps.addBatch();
 
-					if (keys.next()) {
+					ps.setInt(1, batchId2);
+					ps.setString(2, "Vijay");
+					ps.setInt(3, 23);
+					ps.setString(4, "Pune");
 
-						System.out.println("Generated ID: " + keys.getInt(1));
+					ps.addBatch();
+
+					int[] result = ps.executeBatch();
+
+					System.out.println("Batch Executed: " + result.length);
+				}
+
+				// 18. Generated Keys
+
+				int generatedId = getNextId(connect);
+
+				String generatedSql = "INSERT INTO studentInfo " + "(id, sname, sage, scity) " + "VALUES (?, ?, ?, ?)";
+
+				try (PreparedStatement ps = connect.prepareStatement(generatedSql)) {
+
+					ps.setInt(1, generatedId);
+					ps.setString(2, "Karan");
+					ps.setInt(3, 24);
+					ps.setString(4, "Mumbai");
+
+					int rows = ps.executeUpdate();
+
+					if (rows > 0) {
+
+						System.out.println("Data Inserted Successfully!");
+
+						System.out.println("Generated ID: " + generatedId);
 					}
 				}
-			}
+				// =================================================
+				// 19. SCROLLABLE RESULTSET
+				// =================================================
 
-			// =====================================================
-			// 19. SCROLLABLE RESULTSET
-			// =====================================================
-			/*
-			 * Normal ResultSet: - Usually moves only forward.
-			 *
-			 * Scrollable ResultSet: - Can move forward and backward.
-			 *
-			 * last() - Moves cursor to last row.
-			 *
-			 * first() - Moves cursor to first row.
-			 */
+				try (Statement scrollStatement = connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+						ResultSet.CONCUR_READ_ONLY);
 
-			try (Statement scrollStatement = connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-					ResultSet.CONCUR_READ_ONLY);
+						ResultSet rs = scrollStatement.executeQuery("SELECT * FROM studentInfo")) {
 
-					ResultSet rs = scrollStatement.executeQuery("SELECT * FROM studentInfo")) {
+					rs.last();
 
-				rs.last();
+					System.out.println("Last Student: " + rs.getString("sname"));
 
-				System.out.println("Last Student: " + rs.getString("sname"));
+					rs.first();
 
-				rs.first();
+					System.out.println("First Student: " + rs.getString("sname"));
+				}
 
-				System.out.println("First Student: " + rs.getString("sname"));
-			}
+				// =================================================
+				// 20. CALLABLESTATEMENT
+				// =================================================
 
-			// =====================================================
-			// 20. CALLABLESTATEMENT
-			// =====================================================
-			/*
-			 * CallableStatement: - Used to call Stored Procedures.
-			 *
-			 * Stored Procedure: - SQL code stored inside the database.
-			 *
-			 * Syntax: {call procedureName(?)}
-			 */
+				try {
 
-			/*
-			 * Create this procedure in MySQL first:
-			 *
-			 * DELIMITER //
-			 *
-			 * CREATE PROCEDURE getStudent(IN studentId INT) BEGIN SELECT * FROM studentInfo
-			 * WHERE id = studentId; END //
-			 *
-			 * DELIMITER ;
-			 */
+					String procedure = "{call getStudent(?)}";
 
-			try {
+					try (CallableStatement cs = connect.prepareCall(procedure)) {
 
-				String procedure = "{call getStudent(?)}";
+						cs.setInt(1, 1);
 
-				try (CallableStatement cs = connect.prepareCall(procedure)) {
+						try (ResultSet rs = cs.executeQuery()) {
 
-					cs.setInt(1, 1);
+							while (rs.next()) {
 
-					try (ResultSet rs = cs.executeQuery()) {
+								System.out.println(rs.getInt("id") + "\t" + rs.getString("sname") + "\t"
+										+ rs.getInt("sage") + "\t" + rs.getString("scity"));
+							}
 
-						while (rs.next()) {
-
-							System.out.println(rs.getInt("id") + "\t" + rs.getString("sname") + "\t" + rs.getInt("sage")
-									+ "\t" + rs.getString("scity"));
 						}
 					}
+
+				} catch (SQLException e) {
+
+					System.out.println("Stored procedure not available.");
 				}
 
-			} catch (SQLException e) {
+				// =================================================
+				// 21. TRANSACTION ISOLATION
+				// =================================================
 
-				System.out.println("Stored procedure not available.");
+				System.out.println("Transaction Isolation: " + connect.getTransactionIsolation());
+
+				// =================================================
+				// 22. TRY-WITH-RESOURCES
+				// =================================================
+
+				System.out.println("Resources will be closed automatically.");
 			}
 
-			// =====================================================
-			// 21. TRANSACTION ISOLATION
-			// =====================================================
-			/*
-			 * Transaction Isolation: - Controls how one transaction can see changes made by
-			 * another transaction.
-			 *
-			 * JDBC provides constants such as:
-			 *
-			 * TRANSACTION_READ_UNCOMMITTED TRANSACTION_READ_COMMITTED
-			 * TRANSACTION_REPEATABLE_READ TRANSACTION_SERIALIZABLE
-			 */
-
-			System.out.println("Transaction Isolation: " + connect.getTransactionIsolation());
-
-			// =====================================================
-			// 22. TRY-WITH-RESOURCES
-			// =====================================================
-			/*
-			 * try-with-resources: - Automatically closes JDBC resources.
-			 *
-			 * Example:
-			 *
-			 * try (Connection connect = ...) {
-			 *
-			 * }
-			 *
-			 * Connection is automatically closed.
-			 *
-			 * Same can be used for: - Connection - Statement - PreparedStatement -
-			 * ResultSet
-			 */
-
-			System.out.println("Connection will be closed automatically.");
-
 		} catch (SQLException e) {
-
-			// =====================================================
-			// 23. EXCEPTION HANDLING
-			// =====================================================
-			/*
-			 * SQLException: - Handles database-related errors.
-			 *
-			 * Examples: - Wrong SQL query - Wrong username/password - Database not
-			 * available - Duplicate key - Connection error
-			 */
 
 			System.out.println("Database Error!");
 
 			e.printStackTrace();
+		}
+	}
+
+	// =============================================================
+	// GET NEXT AVAILABLE ID
+	// =============================================================
+
+	private static int getNextId(Connection connect) throws SQLException {
+
+		String sql = "SELECT COALESCE(MAX(id), 0) + 1 " + "FROM studentInfo";
+
+		try (Statement statement = connect.createStatement();
+
+				ResultSet result = statement.executeQuery(sql)) {
+
+			result.next();
+
+			return result.getInt(1);
 		}
 	}
 }
