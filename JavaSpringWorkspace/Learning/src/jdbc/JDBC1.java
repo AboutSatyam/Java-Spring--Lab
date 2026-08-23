@@ -26,7 +26,9 @@ public class JDBC1 {
 
 		// 4. Execute Query
 
-		String sql = "INSERT INTO studentinfo(id, sname, sage, scity) VALUES(1, 'Rohan', 17, 'Bengaluru')";
+		// String sql = "INSERT INTO studentInfo(id, sname, sage, scity) VALUES(1,
+		// 'Rohan', 17, 'Bengaluru')";
+		String sql = "INSERT INTO stud" + "entInfo(id, sname, sage, scity) VALUES(2, 'Rohit', 18, 'Bengaluru')";
 
 		int rowAffected = statement.executeUpdate(sql);
 
