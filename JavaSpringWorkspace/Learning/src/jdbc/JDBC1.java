@@ -12,11 +12,7 @@ public class JDBC1 {
 
 		// 2. Establish the Connection
 
-		String url = "jdbc:mysql://localhost:3306/jdbc";
-		String user = "root";
-		String password = "1234";
-
-		Connection connect = DriverManager.getConnection(url, user, password);
+		Connection connect = JDBCUtility.getConnection();
 
 		// 3. Create Statement
 
