@@ -1,15 +1,3 @@
-/**
- * 
- * 
- * 
- * 
- * 
- */
-/**
- * 
- * 
- * 
- * 
- */
-module Hello {
+module jdbc {
+	requires java.sql;
 }
