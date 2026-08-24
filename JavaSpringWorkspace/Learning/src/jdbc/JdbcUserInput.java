@@ -28,8 +28,6 @@ public class JdbcUserInput {
 		System.out.print("Enter Name: ");
 		String sname = sc.nextLine();
 
-		
-		
 		System.out.print("Enter Age: ");
 		int sage = sc.nextInt();
 
